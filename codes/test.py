@@ -12,6 +12,9 @@ from selenium.webdriver.common.keys import Keys
 # 복붙
 import pyperclip
 
+# ???
+import pyautogui
+
 # time.sleep 사용
 import time
 
@@ -51,13 +54,20 @@ id_input = "/html/body/div[1]/div[2]/div/div[1]/form/ul/li/div/div[1]/div[1]/inp
 # password input
 pw_input = "/html/body/div[1]/div[2]/div/div[1]/form/ul/li/div/div[1]/div[2]/input"
 
-pyperclip.copy(user_id)
-driver.find_element(By.XPATH, id_input).send_keys(Keys.CONTROL, "v")
+driver.find_element(By.XPATH, id_input).click()
+pyperclip.copy("ryusw14")
+# driver.find_element(By.XPATH, id_input).send_keys(Keys.CONTROL, "v")
+pyautogui.hotkey("ctrl", "v")
 
 time.sleep(2)
 
-pyperclip.copy(user_pw)
-driver.find_element(By.XPATH, pw_input).send_keys(Keys.CONTROL, "v")
+driver.find_element(By.XPATH, pw_input).click()
+pyperclip.copy("ryusw14@gmail.pw")
+# driver.find_element(By.XPATH, pw_input).send_keys(Keys.CONTROL, "v")
+pyautogui.hotkey("ctrl", "v")
 
-time.sleep(3)
+time.sleep(2)
+
+login_fin_btn = "/html/body/div[1]/div[2]/div/div[1]/form/ul/li/div/div[7]/button"
+driver.find_element(By.XPATH, login_fin_btn).click()
 # -------------------------------------------------

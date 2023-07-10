@@ -1,9 +1,8 @@
-a, b, c = map(int, input().split())
-i = 1
-while True:
-    if i % a == 0:
-        if i % b == 0:
-            if i % c == 0:
-                break
-    i += 1
-print(i)
+a = int(input())
+
+b = tuple(map(int, (input().split())))
+
+c = 0
+for i in range(len(b)):
+    if b[i] > c:
+        c = b[i]
